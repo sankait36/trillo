@@ -18,6 +18,8 @@
   height: 7rem;
   background-color: #FFF;
   border-bottom: var(--line);
+  position: relative;
+  z-index: 20;
 
   display: flex;
   justify-content: space-between;

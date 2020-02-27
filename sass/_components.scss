@@ -89,8 +89,16 @@
     background-color: var(--color-grey-light-2);
   }
 
-  &__icon-box {
+  &__icon-box-bookmark, 
+  &__icon-box-chat {
     position: relative;
+    transition: all .5s;
+  }
+
+  &__icon-box-chat:hover &__chatbox {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0);
   }
 
   &__icon {
@@ -118,6 +126,68 @@
     height: 3.75rem;
     border-radius: 50%;
     margin-right: 1rem;
+  }
+
+  &__chatbox {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    max-height: 30rem;
+    width: 35rem;
+    box-shadow: var(--shadow-dark);
+    z-index: 30;
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0, -50%);
+    transition: all .2s;
+
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+
+
+    &--item {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem;
+      &:not(:last-child) {
+        border-bottom: var(--line);
+      }
+
+      &:hover {
+        background-color: var(--color-grey-light-2);
+      }
+    }
+
+    &--image {
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+    }
+
+    &--details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: auto;
+    }
+
+    &--name {
+      text-transform: uppercase;
+    }
+
+    &--preview,
+    &--time {
+      color: var(--color-grey-dark-3);
+    }
+
+    &--timestamps {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 }
 
