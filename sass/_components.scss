@@ -411,6 +411,11 @@
   display: flex;
   flex-wrap: wrap;
 
+  @media only screen and (max-width: $bp-xxsmall) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   &__item {
     flex: 0 0 50%;
     margin-bottom: .7rem;
@@ -543,11 +548,19 @@
     padding: 2.5rem 0;
   }
 
+  @media only screen and (max-width: $bp-xsmall) {
+    padding: 2.5rem 1.5rem;
+  }
+
   &__book-now {
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-xsmall) {
+      font-size: 1.5rem;
+    }
   }
 }
 
