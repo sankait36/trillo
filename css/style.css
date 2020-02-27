@@ -100,10 +100,14 @@ body {
   .user-nav__icon-box-bookmark, .user-nav__icon-box-chat {
     position: relative;
     transition: all .5s; }
-  .user-nav__icon-box-chat:hover .user-nav__chatbox {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(0); }
+  @media only screen and (min-width: 31.25em) {
+    .user-nav__icon-box-chat:hover .user-nav__chatbox {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0); } }
+  @media only screen and (max-width: 31.25em) {
+    .user-nav__icon-box-chat:hover .user-nav__chatbox {
+      visibility: hidden; } }
   .user-nav__icon {
     height: 2.25rem;
     width: 2.25rem;
@@ -167,6 +171,29 @@ body {
       display: flex;
       flex-direction: column;
       align-items: flex-end; }
+    .user-nav__chatbox--button {
+      border: none;
+      color: var(--color-primary);
+      font-family: inherit;
+      font-size: inherit;
+      border-bottom: 1px solid currentColor;
+      background-color: transparent;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all .2s; }
+      .user-nav__chatbox--button span {
+        margin-left: 3px;
+        transition: margin-left .2s; }
+      .user-nav__chatbox--button:hover {
+        color: var(--color-grey-dark-1); }
+        .user-nav__chatbox--button:hover span {
+          margin-left: 8px; }
+      .user-nav__chatbox--button:focus {
+        outline: none;
+        animation: pulsate 1s infinite; }
+    @media only screen and (max-width: 31.25em) {
+      .user-nav__chatbox {
+        visibility: hidden; } }
 
 .side-nav {
   font-size: 1.4rem;

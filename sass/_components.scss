@@ -96,9 +96,14 @@
   }
 
   &__icon-box-chat:hover &__chatbox {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(0);
+    @media only screen and (min-width: $bp-smallest) {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0);
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      visibility: hidden;
+    }
   }
 
   &__icon {
@@ -187,6 +192,40 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+    }
+
+    &--button {
+      border: none;
+      color: var(--color-primary);
+      font-family: inherit;
+      font-size: inherit;
+      border-bottom: 1px solid currentColor;
+      background-color: transparent;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all .2s;
+    
+      & span {
+        margin-left: 3px;
+        transition: margin-left .2s;
+      }
+    
+      &:hover {
+        color: var(--color-grey-dark-1);
+    
+        span {
+          margin-left: 8px;
+        }
+      }
+    
+      &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+      }
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      visibility: hidden;
     }
   }
 }
