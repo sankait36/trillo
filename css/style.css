@@ -204,6 +204,9 @@ body {
   display: flex;
   align-items: center;
   border-bottom: var(--line); }
+  @media only screen and (max-width: 28.125em) {
+    .overview {
+      flex-direction: column; } }
   .overview__heading {
     font-size: 2.25rem;
     font-weight: 300;
@@ -214,9 +217,17 @@ body {
       .overview__heading {
         font-size: 1.8rem;
         padding: 1.25rem 2rem; } }
+    @media only screen and (max-width: 28.125em) {
+      .overview__heading {
+        font-size: 2.5rem;
+        padding-bottom: 0; } }
   .overview__stars {
     margin-right: auto;
     display: flex; }
+    @media only screen and (max-width: 28.125em) {
+      .overview__stars {
+        margin-right: 0;
+        margin-bottom: 1.25rem; } }
   .overview__icon-star, .overview__icon-location {
     width: 1.75rem;
     height: 1.75rem;
@@ -241,12 +252,22 @@ body {
       .overview__rating {
         flex-direction: column;
         padding: 0 1.5rem; } }
+    @media only screen and (max-width: 28.125em) {
+      .overview__rating {
+        flex-direction: row;
+        margin-top: 1.25rem;
+        margin-left: 0;
+        padding: 0;
+        justify-content: space-around; } }
   .overview__rating-count {
     font-size: .8rem;
     text-transform: uppercase; }
     @media only screen and (max-width: 37.5em) {
       .overview__rating-count {
         font-size: .5rem; } }
+    @media only screen and (max-width: 28.125em) {
+      .overview__rating-count {
+        font-size: 1.8rem; } }
   .overview__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
@@ -254,6 +275,9 @@ body {
     @media only screen and (max-width: 37.5em) {
       .overview__rating-average {
         font-size: 1.8rem; } }
+    @media only screen and (max-width: 28.125em) {
+      .overview__rating-average {
+        margin-bottom: 0; } }
 
 .btn-inline {
   border: none;
